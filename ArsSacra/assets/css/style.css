@@ -1,0 +1,386 @@
+/*Necessity*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/*Deleting the scrollbar*/
+
+.anti_scrollbar::-webkit-scrollbar {
+    width: 0 !important;
+}
+
+.anti_scrollbar {
+    -ms-overflow-style: none;
+}
+
+/*In the code, he also has more things for more detail but i dont know how to use it.*/
+
+/*Code to make a parallax effect for the footer*/
+
+.padding_for_footer {
+    position: relative;
+    padding-bottom: 350px;
+    box-shadow: 3px 2px 2px 0px rgba(51, 51, 51, 0.5);
+    pointer-events: none;
+}
+
+main, footer, nav {
+    pointer-events: all;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    z-index: -1;
+}
+
+footer a {
+    color: white;
+}
+
+@media screen and (max-width: 773px) {
+    .padding_for_footer {
+        padding-bottom: 540px;
+    }
+}
+
+/*Adding a ribbon to the header*/
+
+/*Idea of the code came from*/
+
+/*https://css-tricks.com/snippets/css/ribbon/*/
+
+.ribbon {
+    width: 4.5em;
+    position: relative;
+    text-align: center;
+    background: #78A0FF;
+    margin: auto;
+}
+
+.ribbon:before, .ribbon:after {
+    content: "";
+    /*This is necessary because without it, it wont show itself because it's empty*/
+    position: absolute;
+    bottom: -0.5em;
+    border: 0.6em solid rgb(93, 138, 241);
+    z-index: -1;
+}
+
+.ribbon:before {
+    left: -1em;
+    border-right-width: 1.5em;
+    border-left-color: transparent;
+    /*This is very interesting, this makes somewhat of a inverse triangle, because that border is gone*/
+}
+
+.ribbon:after {
+    right: -1em;
+    border-left-width: 1.5em;
+    border-right-color: transparent;
+}
+
+/*Fonts, fontsizes and font colors*/
+
+.caveat {
+    font-family: 'Caveat', 'Arial';
+}
+
+.two_ems {
+    font-size: 1.8em !important;
+}
+
+h1 {
+    font-size: 4em !important;
+}
+
+h2 {
+    font-size: 3em !important;
+}
+
+.gray-font {
+    color: gray;
+}
+
+.white-font {
+    color: white;
+}
+
+.googlemaps {
+    border: 0;
+}
+
+/*For the background image*/
+
+#location_img {
+    background-image: url("../images/medjugorje.jpg");
+}
+
+#shop_img {
+    background-image: url("../images/shopimg.jpg");
+}
+
+#myPicture1, #myPicture2, #myPicture3 {
+    max-width: 100%;
+}
+
+.background_img {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Slideshow, only necessary for the shop.php file*/
+
+.slideshow-container {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.fade-in {
+    -webkit-animation-name: fade-in-animation;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade-in-animation;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade-in-animation {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade-in-animation {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+#go-back {
+    top: 5em;
+    left: 10px;
+    border-radius: 50%;
+    background: rgb(146, 141, 141);
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    width: 2em;
+    line-height: 2em;
+}
+
+/*=========================================*/
+
+/* And now come ALL OF THE Building blocks*/
+
+/*=========================================*/
+
+.nonselectable {
+    user-select: none;
+    /* Standard syntax */
+    -webkit-user-select: none;
+    /* Safari 3.1+ */
+    -moz-user-select: none;
+    /* Firefox 2+ */
+    -ms-user-select: none;
+    /* IE 10+ */
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.overflow_hidden {
+    overflow: hidden;
+}
+
+/* Height/Width mutators*/
+
+.full-screen {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.min-half_height {
+    min-height: 45vh;
+}
+
+.min-max_height {
+    min-height: 95vh;
+}
+
+.max-size {
+    width: 100%;
+    height: 100%;
+}
+
+.opening_img {
+    max-height: 100vh;
+    height: auto;
+}
+
+/* Paddings */
+
+.no_padding {
+    padding: 0 !important;
+}
+
+.padding-20px {
+    padding: 20px;
+}
+
+.padding-15px {
+    padding: 15px;
+}
+
+.padding-10px {
+    padding: 10px;
+}
+
+.top-padding-5em {
+    padding-top: 5em;
+}
+
+.top-padding-10 {
+    padding-top: 10vh;
+}
+
+.top-padding-20px {
+    padding-top: 20px;
+}
+
+.top-padding-20 {
+    padding-top: 20vh;
+}
+
+.bottom-padding-10 {
+    padding-bottom: 10vh;
+}
+
+.top-bot-padding-10 {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.top-bot-padding-20 {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+}
+
+/* Margins */
+
+.top-margin-1em {
+    margin-top: 1em;
+}
+
+.top-margin-5 {
+    margin-top: 5em;
+}
+
+.top-margin-10 {
+    margin-top: 10vh;
+}
+
+.top-margin-20 {
+    margin-top: 20vh;
+}
+
+.top-margin-30 {
+    margin-top: 30vh;
+}
+
+.top-margin-40 {
+    margin-top: 40vh;
+}
+
+.top-bot-margin {
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+}
+
+.margin-20px {
+    margin: 20px;
+}
+
+.margin-10px {
+    margin: 10px;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+/*Box properties*/
+
+.shadow-box {
+    -moz-box-shadow: 0 0 3px #000;
+    -webkit-box-shadow: 0 0 3px #000;
+    box-shadow: 0 0 3px #000;
+}
+
+.box {
+    width: 100%;
+    padding-top: 100%;
+}
+
+/*Positioning*/
+
+.float-left {
+    float: left;
+    width: 50%;
+}
+
+.float-right {
+    float: right;
+    width: 50%;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.align_horizontally {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+.align_vertically {
+    vertical-align: middle;
+}
+
+.z-index_5 {
+    position: relative;
+    z-index: 5 !important;
+}
+
+/*Background colors*/
+
+.white_background {
+    background: white;
+}
+
+.dark-blue_background {
+    background: #325BBA;
+}
+
+/* Note to self - Color palette
+https://color.adobe.com/create/color-wheel/?base=2&rule=Complementary&selected=2&name=My%20Color%20Theme&mode=rgb&rgbvalues=0.7,0.5697166759167358,0.2596197327849657,1,0.873049522309822,0.570885332549951,1,0.8434652439525795,0.470885332549951,0.19774629276146427,0.35668851293751136,0.73,0.470885332549951,0.6288901690189093,1&swatchOrder=0,1,2,3,4 */
